@@ -8,9 +8,9 @@ DATE_FORMAT = '%Y-%m-%d %H:%M:%S'
 
 
 def get_timezones(partial):
-    regex = re.compile(re.escape(partial))
+    regex = re.compile(re.escape(partial.lower()))
     for timezone in pytz.all_timezones:
-        if re.search(regex, timezone):
+        if re.search(regex, timezone.lower()):
             yield timezone
 
 
